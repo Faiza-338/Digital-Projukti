@@ -54,7 +54,7 @@ class CourseCard extends StatelessWidget {
                   width: double.infinity, 
                   padding: EdgeInsets.fromLTRB(5, 0, 0, 0),
                   margin: EdgeInsets.fromLTRB(3,3,0,0),
-                    child: Text(course.title.length>25?'${course.title.substring(0, 25)}...':'${course.title}',style: TextStyle(fontSize: 13),),
+                    child: Text(course.title.length>25?'${course.title.substring(0, 25)}...':course.title,style: TextStyle(fontSize: 13),),
                 
                 
                 ),
@@ -75,20 +75,21 @@ class CourseCard extends StatelessWidget {
                                 width: 20, // Increase the width to make the circle larger
                                 height: 20, // Increase the height to make the circle larger
                                 margin: const EdgeInsets.symmetric(horizontal: 2), 
-                                decoration: BoxDecoration(
-                                  
-                                        color: const Color.fromARGB(255, 181, 213, 243),
-                                        shape: BoxShape.circle,
-                                        
+                                child: const Center(
+                                        child: Icon(
+                                          Icons.account_circle, // Change this to any icon you want
+                                          size: 20, // Adjust the icon size
+                                          color: Color(0xFFE8F1FF), // Icon color
+                                        ),
                                       ),
-                                
                                  
                           
                               ),
                               Container(  
                                 margin: EdgeInsets.fromLTRB(2,0,5,0),
                                 
-                                  child: Text('${course.instructor}',style: TextStyle(fontSize: 12),),
+                                
+                                  child: Text(course.instructor,style: TextStyle(fontSize: 12),),
                               ),
                             ],
                           ),
@@ -105,29 +106,26 @@ class CourseCard extends StatelessWidget {
                           
                           children: [
                             
-                            Container(
-                              width: 14, // Increase the width to make the circle larger
-                                  height: 14, // Increase the height to make the circle larger
-                                  margin:EdgeInsets.fromLTRB(0, 2, 0, 0), 
-                                  
-                                  decoration: BoxDecoration(
-                                    
-                                          color: const Color.fromARGB(255, 135, 201, 240),
-                                          shape: BoxShape.circle,
-                                          
+                           Container(
+                                      width: 14, // Increased size for visibility
+                                      height: 14,
+                                      margin: const EdgeInsets.fromLTRB(0, 2, 0, 0),
+                                      
+                                      child: const Center(
+                                        child: Icon(
+                                          Icons.play_circle_fill, // Change this to any icon you want
+                                          size: 14, // Adjust the icon size
+                                          color: Colors.blue, // Icon color
                                         ),
-                            ),
+                                      ),
+                                    ),
+
                           Container(
                                   // Increase the width to make the circle larger
                                   height: 12, // Increase the height to make the circle larger
                                   margin:EdgeInsets.fromLTRB(2, 2, 0, 0),
                                   
-                                  decoration: BoxDecoration(
-                                    
-                                          color: const Color.fromARGB(255, 241, 243, 245),
-                                          shape: BoxShape.rectangle,
-                                          
-                                        ),
+                                  
                                         child: Text('${course.videos} Videos',style: TextStyle(fontSize: 8),),
                           ),
                           Container(
@@ -135,12 +133,14 @@ class CourseCard extends StatelessWidget {
                                   height: 14, // Increase the height to make the circle larger
                                   margin:EdgeInsets.fromLTRB(7, 2, 0, 0), 
                                   
-                                  decoration: BoxDecoration(
-                                    
-                                          color: const Color.fromARGB(255, 135, 201, 240),
-                                          shape: BoxShape.circle,
-                                          
+                               
+                                         child: const Center(
+                                        child: Icon(
+                                          Icons.access_time_filled, // Change this to any icon you want
+                                          size: 14, // Adjust the icon size
+                                          color: Colors.blue, // Icon color
                                         ),
+                                      ),
                             ),
                           Container(
                                   // Increase the width to make the circle larger
@@ -160,12 +160,14 @@ class CourseCard extends StatelessWidget {
                                   height: 14, // Increase the height to make the circle larger
                                   margin:EdgeInsets.fromLTRB(7, 2, 0, 0), 
                                   
-                                  decoration: BoxDecoration(
-                                    
-                                          color: const Color.fromARGB(255, 135, 201, 240),
-                                          shape: BoxShape.circle,
-                                          
+                                  
+                                        child: const Center(
+                                        child: Icon(
+                                          Icons.edit_note, // Change this to any icon you want
+                                          size: 14, // Adjust the icon size
+                                          color: Colors.blue, // Icon color
                                         ),
+                                      ),
                             ),
                           Container(
                                   // Increase the width to make the circle larger
@@ -190,12 +192,7 @@ class CourseCard extends StatelessWidget {
                                 height: 12, // Increase the height to make the circle larger
                                 margin:EdgeInsets.fromLTRB(2, 2, 0, 0),
                                 
-                                decoration: BoxDecoration(
-                                  
-                                        color: const Color.fromARGB(255, 241, 243, 245),
-                                        shape: BoxShape.rectangle,
-                                        
-                                      ),
+                               
                                       child: Text('\$${course.price}',style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold,color: Colors.blue),),
                         ),
                         Container(
@@ -210,7 +207,7 @@ class CourseCard extends StatelessWidget {
                                         shape: BoxShape.rectangle,
                                         
                                       ),
-                                      child: Text('${course.tag}',style: TextStyle(fontSize: 8,fontWeight: FontWeight.bold,color: Colors.black),),
+                                      child: Text(course.tag,style: TextStyle(fontSize: 8,fontWeight: FontWeight.bold,color: Colors.black),),
                         ),
                       ],
                     )
